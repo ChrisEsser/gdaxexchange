@@ -1,5 +1,9 @@
 {
   "name": "chrisesser/gdaxexchange",
+  "license": "mit",
+  "minimum-stability": "stable",
+  "require": {},
+  "require-dev": {},
   "autoload": {
     "psr-0": {
       "ChrisEsser\\GDAXExchange": "src"
