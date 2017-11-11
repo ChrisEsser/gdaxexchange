@@ -1,5 +1,6 @@
 {
   "name": "chrisesser/gdaxexchange",
+  "description": "GDAX Exchange API Class",
   "license": "mit",
   "minimum-stability": "stable",
   "require": {},
