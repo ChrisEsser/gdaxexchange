@@ -6,8 +6,8 @@
   "require": {},
   "require-dev": {},
   "autoload": {
-    "psr-0": {
-      "ChrisEsser\\GDAXExchange": "src"
+    "psr-4": {
+      "ChrisEsser\\GDAXExchange\\": "src/"
     }
   }
 }
