@@ -1,0 +1,8 @@
+{
+  "name": "chrisesser/gdaxexchange",
+  "autoload": {
+    "psr-0": {
+      "ChrisEsser\\GDAXExchange": "src"
+    }
+  }
+}
