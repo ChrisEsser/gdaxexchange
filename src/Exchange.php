@@ -6,7 +6,7 @@ namespace ChrisEsser\GDAXExchange;
 class Exchange
 {
 
-    public $url = 'https://api.gdax.com/';
+    public $url;
 
     public $endpoints = [
         'accounts'          => ['method' => 'GET', 'uri' => '/accounts'],
@@ -40,6 +40,13 @@ class Exchange
     private $passPhrase;
     private $timestamp;
 
+    public function __construct($test = false)
+    {
+
+        $this->url = !$test ? 'https://api.gdax.com/' : 'https://api-public.sandbox.gdax.com/';
+
+    }
+
     public function auth($key, $secret, $passPhrase)
     {
         $this->key = $key;
@@ -65,7 +72,9 @@ class Exchange
         $request = new Request();
 
         try {
+
             $response = $request->call($url, $method, $headers, $body);
+
             if ($response['statusCode'] === 200) {
                 return json_decode($response['body'], true);
             }

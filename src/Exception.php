@@ -2,7 +2,10 @@
 
 namespace ChrisEsser\GDAXExchange;
 
-class RequestException extends \Exception
+use Exception;
+
+class RequestException extends Exception
 {
+    //
 
 }

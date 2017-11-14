@@ -32,20 +32,10 @@ class Request
         curl_setopt_array($curl, $options);
         $response = curl_exec($curl);
 
-        if ($response === false) {
-            $error = curl_errno($curl);
-            $message = curl_error($curl);
-            curl_close($curl);
-            throw new RequestException('Network error ' . $message . ' (' . $error . ')');
-        }
-
         $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
         curl_close($curl);
 
-        if ($statusCode != 200) {
-            throw new RequestException(' ' . $statusCode . ' ' . $response);
-        }
 
         return ['statusCode' => $statusCode, 'body' => $response];
     }
